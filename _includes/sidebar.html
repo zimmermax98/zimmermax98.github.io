@@ -1,0 +1,42 @@
+<div class="sidebar">
+  <div class="container sidebar-sticky-top">
+    <img src="profile_picture.png" alt="Picture of Me" style="max-width: 100%; height: auto;">
+
+    <div class="sidebar-about">
+      <h1>
+          {{ site.title }}
+      </h1>
+
+      <div class="sidebar-icon-group">
+        <a href="mailto:zimmermann-max@web.de" target="_blank">
+          <i class="sidebar-icon fa fa-envelope"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/max-zimmermann-4a7186171/" target="_blank">
+          <i class="sidebar-icon fab fa-linkedin"></i>
+        </a>
+        <a href="https://github.com/zimmermax98" target="_blank">
+          <i class="sidebar-icon fab fa-github"></i>
+        </a>
+      </div>
+
+      <p class="lead">{{ site.description }}</p>
+    </div>
+
+    <nav class="sidebar-nav">
+      {% for post in paginator.posts %}
+      <a class="sidebar-nav-item" href="#{{ post.slug }}">
+        {{ post.title }}
+      </a>
+      {% endfor %}
+
+      <!--<a class="sidebar-nav-item" href="{{ site.github.repo }}/archive/v{{ site.version }}.zip">Download CV as PDF</a>-->
+    </nav>
+  </div>
+
+  <div class="container sidebar-sticky-bottom">
+
+    <p style="text-align: center;">
+      &copy; {{ site.time | date: '%Y' }}. All rights reserved.
+    </p>
+  </div>
+</div>
